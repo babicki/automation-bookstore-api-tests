@@ -24,7 +24,7 @@ src/
 │   └── resources/
 └── test/
     ├── java/
-    │   └── com/example/
+    │   └── com.example/
     │       ├── api/ 
     │       │   ├── AuthService.java
     │       │   ├── BaseApi.java
