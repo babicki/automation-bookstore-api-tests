@@ -21,9 +21,8 @@ public class RemoveBookSteps {
     private String userId;
 
     /**
-     * Given step: Authenticates a user for book removal operations.
-     * Performs login using valid credentials and validates successful authentication
-     * by checking response status code and extracting token and userId.
+     * Logs in the user for book removal.
+     * Extracts token and userId for further requests.
      */
     @Given("the user is logged in for removing a book")
     public void the_user_is_logged_in_for_removing_a_book() {
@@ -43,9 +42,8 @@ public class RemoveBookSteps {
     }
 
     /**
-     * When step: Removes a book from the user's personal collection.
-     * Retrieves the user's first book from their collection and sends an authenticated
-     * DELETE request to remove it.
+     * Removes a book from the user's collection.
+     * Finds the first book and sends a DELETE request with authentication.
      */
     @When("the user removes a book from their collection")
     public void the_user_removes_a_book_from_their_collection() {
@@ -74,8 +72,8 @@ public class RemoveBookSteps {
     }
 
     /**
-     * Then step: Verifies that the book was successfully removed from the user's collection.
-     * Asserts HTTP 204 (No Content) status code which indicates successful deletion.
+     * Checks that the book was removed successfully.
+     * Verifies HTTP 204 status code to confirm deletion.
      */
     @Then("the book should be removed successfully")
     public void the_book_should_be_removed_successfully() {

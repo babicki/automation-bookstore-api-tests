@@ -3,11 +3,10 @@ package com.example.api;
 import io.restassured.RestAssured;
 
 /**
- * Base API class for setting up common REST Assured configuration.
- * Initializes the base URI for all API requests to the DemoQA Book Store application.
+ * Base API class for setting up REST Assured.
+ * Sets the base URL for all API requests to the DemoQA Book Store app.
  *
- * This class uses a static initializer block to configure REST Assured with the base URL,
- * ensuring all REST Assured calls will target the correct API endpoint.
+ * This ensures that all REST Assured calls use the correct API endpoint.
  */
 public class BaseApi {
 

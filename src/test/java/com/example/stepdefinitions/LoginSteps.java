@@ -8,9 +8,8 @@ import io.restassured.response.Response;
 import static org.junit.Assert.*;
 
 /**
- * Step definitions for user login and authentication scenarios.
- * Implements Gherkin steps defined in login.feature file and provides
- * test logic for validating successful login operations and token retrieval.
+ * Step definitions for user login tests.
+ * Handles login scenarios and checks authentication token retrieval.
  */
 public class LoginSteps {
 
@@ -18,8 +17,8 @@ public class LoginSteps {
     private String token;
 
     /**
-     * Given step: Sends a valid login request using predefined test credentials.
-     * Calls the AuthService.login() method and extracts the authentication token.
+     * Sends a valid login request using test credentials.
+     * Extracts the authentication token for later use.
      */
     @Given("the user sends a valid login request")
     public void the_user_sends_a_valid_login_request() {
@@ -33,8 +32,8 @@ public class LoginSteps {
     }
 
     /**
-     * Then step: Asserts that the login response has HTTP status code 200 (OK).
-     * Indicates successful authentication.
+     * Checks that the login response status is 200 (OK).
+     * Confirms successful authentication.
      */
     @Then("the response status code should be 200")
     public void the_response_status_code_should_be_200() {
@@ -42,8 +41,8 @@ public class LoginSteps {
     }
 
     /**
-     * Then step: Validates that the response contains a non-null and non-empty authentication token.
-     * Token is required for subsequent authenticated API requests.
+     * Verifies that the response contains a valid authentication token.
+     * Token must be non-null and not empty.
      */
     @Then("the response should contain an authentication token")
     public void the_response_should_contain_an_authentication_token() {

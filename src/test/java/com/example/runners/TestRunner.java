@@ -5,13 +5,12 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 /**
- * Cucumber test runner class for executing BDD test scenarios.
- * Configures and orchestrates the execution of all feature files with their
- * corresponding step definitions.
+ * Cucumber test runner for running BDD scenarios.
+ * Loads all feature files and links them with step definitions.
  *
- * This runner is executed by JUnit and loads all feature files from the
- * src/test/resources/features directory. Step definitions are discovered
- * in the com.example.stepdefinitions package.
+ * Uses JUnit to run the tests. Feature files are in
+ * src/test/resources/features. Step definitions are in
+ * com.example.stepdefinitions.
  */
 @RunWith(Cucumber.class)
 @CucumberOptions(

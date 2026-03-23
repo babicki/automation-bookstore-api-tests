@@ -1,19 +1,18 @@
 package com.example.data;
 
 /**
- * Enum containing predefined user credentials for testing.
- * Provides type-safe access to various credential scenarios including valid,
- * invalid, and edge-case credentials used throughout the test suite.
+ * Enum with user credentials for testing.
+ * Gives easy access to different login scenarios like valid, invalid, or empty credentials.
  *
- * Each enum constant represents a different test scenario:
- * - VALID: Legitimate credentials for successful authentication
- * - INVALID_PASSWORD: Valid username with wrong password
- * - INVALID_USER: Non-existent username with correct password format
- * - EMPTY: Empty string credentials for null/empty validation
+ * Each constant is a different scenario:
+ * - VALID: correct username and password
+ * - INVALID_PASSWORD: correct username, wrong password
+ * - INVALID_USER: wrong username, correct password format
+ * - EMPTY: empty username and password
  */
 public enum UserCredentials {
 
-    // Demo credentials for testing various scenarios
+    // Demo credentials for tests
     VALID("walton.goggins", "A9b!X@r2"),
     INVALID_PASSWORD("walton.goggins", "wrongPass"),
     INVALID_USER("wrong.user", "A9b!X@r2"),
@@ -23,10 +22,7 @@ public enum UserCredentials {
     private final String password;
 
     /**
-     * Constructs a UserCredentials enum constant.
-     *
-     * @param username the username for login
-     * @param password the password for login
+     * Creates a credential set with username and password.
      */
     UserCredentials(String username, String password) {
         this.username = username;
@@ -34,18 +30,14 @@ public enum UserCredentials {
     }
 
     /**
-     * Retrieves the username for this credential set.
-     *
-     * @return the username string
+     * Gets the username.
      */
     public String username() {
         return username;
     }
 
     /**
-     * Retrieves the password for this credential set.
-     *
-     * @return the password string
+     * Gets the password.
      */
     public String password() {
         return password;

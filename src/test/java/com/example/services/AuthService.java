@@ -5,15 +5,11 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 /**
- * Service layer for authentication operations.
- * Manages authentication state by caching the authentication token and user ID
- * across multiple test steps to avoid redundant login calls.
+ * Service class for login operations.
+ * Stores authentication token and user ID to avoid logging in many times.
  *
- * This class provides static methods for retrieving cached authentication data
- * with automatic login fallback if data is not yet available.
- *
- * Note: This class is stateful and maintains session data in static fields.
- * For test isolation, consider clearing static state between test scenarios if needed.
+ * Static methods provide easy access to the token and user ID.
+ * If data is not available, it will login automatically.
  */
 public class AuthService {
 
@@ -21,13 +17,10 @@ public class AuthService {
     private static String userId;
 
     /**
-     * Authenticates a user and caches the authentication token and user ID.
-     * Makes a direct REST API call to the login endpoint.
+     * Logs in a user and saves the token and user ID.
+     * Makes a direct API call to the login endpoint.
      *
-     * @param username the user's username
-     * @param password the user's password
-     *
-     * @example
+     * Example:
      * AuthService.login("walton.goggins", "A9b!X@r2");
      * String token = AuthService.getToken();
      */
@@ -50,10 +43,8 @@ public class AuthService {
     }
 
     /**
-     * Retrieves the cached authentication token.
-     * If the token is not yet cached, performs an automatic login with default credentials.
-     *
-     * @return the authentication Bearer token
+     * Returns the saved authentication token.
+     * If no token is saved, logs in automatically with default credentials.
      */
     public static String getToken() {
         if (token == null) login("walton.goggins", "A9b!X@r2");
@@ -61,10 +52,8 @@ public class AuthService {
     }
 
     /**
-     * Retrieves the cached user ID.
-     * If the user ID is not yet cached, performs an automatic login with default credentials.
-     *
-     * @return the authenticated user's ID
+     * Returns the saved user ID.
+     * If no user ID is saved, logs in automatically with default credentials.
      */
     public static String getUserId() {
         if (userId == null) login("walton.goggins", "A9b!X@r2");

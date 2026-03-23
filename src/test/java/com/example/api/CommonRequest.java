@@ -7,24 +7,18 @@ import io.restassured.specification.RequestSpecification;
 import static io.restassured.RestAssured.given;
 
 /**
- * Utility class for building and sending HTTP requests.
- * Provides centralized request handling with consistent content type,
- * request body serialization, and optional Bearer token authentication.
+ * Utility class for sending HTTP requests.
+ * Handles request setup with JSON content type and optional Bearer token.
  *
- * All requests sent through this class inherit the base URI configuration
- * from BaseApi and use JSON content type by default.
+ * All requests use the base URL from BaseApi.
  */
 public class CommonRequest extends BaseApi {
 
     /**
-     * Sends a POST request to the specified endpoint with optional Bearer token authentication.
+     * Sends a POST request to the given endpoint.
+     * Supports optional Bearer token for authentication.
      *
-     * @param endpoint the API endpoint path (e.g., "/Account/v1/Login")
-     * @param body     the request body object (will be serialized to JSON)
-     * @param token    the Bearer token for authorization, or null for public endpoints
-     * @return the Response object containing status code, headers, and body
-     *
-     * @example
+     * Example:
      * Response response = CommonRequest.send(
      *     "/BookStore/v1/Books",
      *     requestBody,
