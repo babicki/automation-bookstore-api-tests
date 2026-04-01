@@ -11,10 +11,10 @@ The tests were designed based on the official API specification provided in the 
 ## Tech Stack
 
 - **Java** – programming language
-- **Maven** – dependency management and test execution
-- **Cucumber (BDD)** – behavior-driven testing
-- **REST Assured** – API testing framework
-- **JUnit** – testing framework
+- **Maven** – build and dependency management
+- **Cucumber (BDD)** – behavior-driven testing with **Gherkin** syntax
+- **REST Assured** – framework for API testing
+- **JUnit** – framework for unit and integration testing
 
 ## Project Structure
 ```
