@@ -1,4 +1,4 @@
-# Book Collection API Tests
+# Automation Bookstore API Tests
 
 This project focuses on automated API tests for a Book Collection Management System. It covers authentication mechanisms, user collection operations (such as adding and removing books), and negative test scenarios related to unauthorized access to the global catalog.
 
